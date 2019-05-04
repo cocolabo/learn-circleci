@@ -14,4 +14,4 @@ jobs:
           name: コードの取得
           command: |
             ls -al
-            echo '^^^That should look familar^^^'
+            echo '^^^That should look familiar^^^'
