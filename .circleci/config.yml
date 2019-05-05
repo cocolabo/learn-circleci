@@ -32,9 +32,9 @@ jobs:
       - image: alpine:3.7
     steps:
       - run:
-        name: 承認の完了
-        command: |
-          echo 'Do work once the approval has completed'
+          name: 承認の完了
+          command: |
+            echo 'Do work once the approval has completed'
 
 workflows:
   version: 2
@@ -42,16 +42,17 @@ workflows:
     jobs:
       - Hello-World
       - I-Have-Code:
-        requires:
-          - Hello-World
+          requires:
+            - Hello-World
       - Run-With-Node:
-        requires:
-          - Hello-World
+          requires:
+            - Hello-World
       - Hold-For-Approval:
-        type: approval
-        requires:
-          - Run-With-Node
-          - I-Have-Code
+          type: approval
+          requires:
+            - Run-With-Node
+            - I-Have-Code
       - Now-Complete:
-        requires:
-          - Hold-For-Approval
+          requires:
+            - Hold-For-Approval
+
